@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velvera – Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #4e925b;
+      color: black;
+      font-family: 'Georgia', serif;
+      text-align: center;
+    }
+    header {
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .gallery-item {
+      background-color: #6a7f59;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .gallery-item p {
+      margin: 10px 0 0;
+      font-size: 1.1rem;
+    }
+    .button {
+      background-color: white;
+      color: #7f946a;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 20px auto;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .login-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 1000;
+      width: 300px;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>Velvera</header>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="login-popup" id="loginPopup">
+    <button class="close-btn" onclick="togglePopup()">×</button>
+    <h3>Stay Updated</h3>
+    <input type="text" placeholder="Email" style="width:100%; padding:10px; margin:10px 0;" />
+    <button class="button" style="width:100%;">Sign Up</button>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="Prada Bonnie Medium Leather Handbag, Women, Dark Brown.jpeg" alt="Product 1" />
+      <p>₹8,999</p>
+    </div>
+    <div class="gallery-item">
+      <img src="download (7).jpeg" alt="Product 2" />
+      <p>₹7,499</p>
+    </div>
+    <div class="gallery-item">
+      <img src="Women's & Men's Clothing, Shop Online Fashion.jpeg" alt="Product 3" />
+      <p>₹9,299</p>
+    </div>
+    <div class="gallery-item">
+      <img src="Pouch makes perfect.jpeg" alt="Product 4" />
+      <p>₹10,199</p>
+    </div>
+    <div class="gallery-item">
+      <img src="User Avatar.jpeg" alt="Product 5" />
+      <p>₹8,250</p>
+    </div>
+  </div>
+
+  <p style="font-size: 1.2rem;">Coming Soon</p>
+  <a class="button" onclick="togglePopup()">Click here for updates</a>
+
+  <script>
+    function togglePopup() {
+      const overlay = document.getElementById('overlay');
+      const popup = document.getElementById('loginPopup');
+      const isVisible = overlay.style.display === 'block';
+      overlay.style.display = isVisible ? 'none' : 'block';
+      popup.style.display = isVisible ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
